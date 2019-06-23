@@ -1,2 +1,131 @@
 @import "partials/params";
 @import "partials/mixins";
+
+/*Шрифты*/
+
+@font-face {
+  font-family: 'FontAwesome';
+  src: url("../../fonts/FontAwesome/fontawesome-webfont.ttf");
+  src: local("☺"),
+  url('../../fonts/FontAwesome/fontawesome-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../../fonts/FontAwesome/fontawesome-webfont.woff') format('woff'),
+  url('../../fonts/FontAwesome/fontawesome-webfont.woff2') format('woff2'),
+  url('../../fonts/FontAwesome/fontawesome-webfont.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Suisse Int'l";
+  src: url("../../fonts/SuisseIntl/SuisseIntl-Regular.ttf");
+  src: local("☺"),
+  url('../../fonts/SuisseIntl/SuisseIntl-Regular.eot?#iefix') format('embedded-opentype'),
+  url('../../fonts/SuisseIntl/SuisseIntl-Regular.woff') format('woff'),
+  url('../../fonts/SuisseIntl/SuisseIntl-Regular.woff2') format('woff2'),
+  url('../../fonts/SuisseIntl/SuisseIntl-Regular.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*Общие стили*/
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  position: relative;
+  font-family: 'Roboto', sans-serif;
+  background-color: $body-bg;
+  color: $text-color-main;
+  width: 100%;
+  margin: 0 auto;
+}
+
+main{
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p{
+  font-family: "Suisse Int'l", sans-serif;
+  color: $text-color-main;
+  line-height: 1.5em;
+  padding: 0;
+  margin: 0;
+}
+
+div{
+  font-family: "Suisse Int'l", sans-serif;
+  color: $text-color-main;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  font-family: "Suisse Int'l", sans-serif;
+  font-weight: 400;
+  color: $text-color-main;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.ov-hid{
+  overflow-y: hidden;
+}
+
+.container {
+  margin: 0 auto;
+  width: 1160px;
+  position: relative;
+  z-index: 2;
+}
+
+/*Хлебные крошки*/
+
+.page{
+  &_leader{
+    margin: 40px 0;
+  }
+  &_way{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    height: max-content;
+    &_link{
+      display: flex;
+      font-size: 14px;
+      line-height: 1.5em;
+      color: $text-color-main;
+      opacity: 0.5;
+      transition: all 0.3s;
+    }
+    & a:hover{
+      color: $pink;
+      transition: all 0.3s;
+    }
+    span {
+      position: relative;
+      color: $text-color-main;
+      opacity: 0.5;
+      top: -1px;
+      padding: 0 5px;
+    }
+  }
+}

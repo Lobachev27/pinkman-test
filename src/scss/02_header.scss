@@ -1,2 +1,118 @@
 @import "partials/params";
 @import "partials/mixins";
+
+/*Header*/
+
+.header{
+  position: relative;
+  background-color: $body-bg;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  &_logo{
+    &_link{
+      display: block;
+      line-height: 1em;
+      padding: 0;
+      margin: 0;
+    }
+    &_img{
+      object-fit: contain;
+      object-position: center;
+      width: 172px;
+      height: 26px;
+      transition: all 0.5s;
+      &:hover{
+        transform: scale(0.8);
+        transition: all 0.5s;
+      }
+    }
+  }
+  &_top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    &_list{
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      list-style: none;
+    }
+    &_item{
+      margin-left: 30px;
+      &:first-child{
+        margin: 0;
+      }
+    }
+    &_link{
+      font-size: 14px;
+      opacity: 0.5;
+      transition: 0.3s;
+      &:hover{
+        opacity: 1;
+        color: $pink;
+        transition: 0.3s;
+      }
+    }
+  }
+  &_bottom{
+    display: grid;
+    grid-template-columns: auto 135px 164px;
+    grid-column-gap: 30px;
+    height: 60px;
+    &_list{
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      list-style: none;
+    }
+    &_item{
+      margin-right: 30px;
+      &:last-child{
+        margin: 0;
+      }
+    }
+    &_link{
+      font-size: 16px;
+      transition: 0.3s;
+      &:hover{
+        color: $pink;
+        transition: 0.3s;
+      }
+    }
+  }
+  &_phone{
+    display: block;
+    align-self: center;
+    justify-self: center;
+    font-size: 16px;
+    width: max-content;
+    transition: 0.3s;
+    &:hover{
+      color: $pink;
+      transition: 0.3s;
+    }
+  }
+  &_call{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    justify-self: center;
+    font-size: 16px;
+    color: $pink;
+    width: 164px;
+    height: 36px;
+    border: 1px solid $pink;
+    border-radius: 2px;
+    transition: 0.3s;
+    &:hover{
+      color: $text-color-white;
+      background-color: $pink;
+      transition: 0.3s;
+    }
+  }
+  &_hamburger{
+    display: none;
+  }
+}
