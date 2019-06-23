@@ -1,2 +1,133 @@
 @import "partials/params";
 @import "partials/mixins";
+
+.form{
+  position: relative;
+  background-color: $form-bg;
+  & .container{
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 20px;
+    padding: 80px 0;
+  }
+  &_title{
+    font-size: 40px;
+    font-weight: 400;
+    color: $text-color-white;
+    letter-spacing: -1px;
+    line-height: 1.2em;
+    max-width: 300px;
+  }
+  &_description{
+    font-size: 16px;
+    color: $text-color-white;
+    opacity: 0.4;
+    margin-top: 20px;
+    max-width: 250px;
+    line-height: 1.5em;
+  }
+  &_box{
+    position: relative;
+  }
+  &_row{
+    display: grid;
+    &.top{
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: 40px;
+      margin-bottom: 40px;
+    }
+    &.bottom{
+      grid-template-columns: 3fr 2fr;
+      grid-column-gap: 25px;
+      margin-top: 40px;
+    }
+  }
+  & .input {
+    position: relative;
+    width: 100%;
+  }
+  &_textarea {
+    background-color: transparent;
+    font-size: 16px;
+    color: #fff;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    outline: none;
+    height: 40px;
+    width: 100%;
+    padding: 10px 0;
+    &:focus {
+      border-bottom: 1px solid $pink;
+      & + div .label {
+        font-size: 14px;
+        color: $pink;
+        opacity: 1;
+        bottom: 45px;
+      }
+    }
+    &:valid {
+      & + .label {
+        font-size: 14px;
+        color: $pink;
+        opacity: 1;
+        bottom: 45px;
+      }
+    }
+  }
+  &_input {
+    background-color: transparent;
+    font-size: 16px;
+    color: #fff;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    outline: none;
+    height: 40px;
+    width: 100%;
+    padding: 10px 0;
+    &:focus {
+      border-bottom: 1px solid $pink;
+      & + div .label {
+        font-size: 14px;
+        color: $pink;
+        opacity: 1;
+        bottom: 45px;
+      }
+    }
+    &:valid {
+      & + .label {
+        font-size: 14px;
+        color: $pink;
+        opacity: 1;
+        bottom: 45px;
+      }
+    }
+  }
+  & .label {
+    color: #fff;
+    opacity: 0.4;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    pointer-events: none;
+    transition-duration: 0.2s;
+  }
+  &_confirmation{
+    font-size: 13px;
+    color: $text-color-white;
+    opacity: 0.5;
+    line-height: 1.45em;
+  }
+  &_btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    color: $text-color-white;
+    background-color: $pink;
+    border-radius: 2px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+}
