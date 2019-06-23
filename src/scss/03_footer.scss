@@ -1,2 +1,106 @@
 @import "partials/params";
 @import "partials/mixins";
+
+.footer{
+  position: relative;
+  background-color: $footer-bg;
+  &_logo{
+    &_link{
+      display: block;
+      line-height: 1em;
+      padding: 0;
+      margin: 0;
+    }
+    &_img{
+      object-fit: contain;
+      object-position: center;
+      width: 172px;
+      height: 26px;
+      transition: all 0.5s;
+      &:hover{
+        transform: scale(0.8);
+        transition: all 0.5s;
+      }
+    }
+  }
+  &_top{
+    display: grid;
+    grid-template-columns: 3fr 3fr 2fr 2fr 2fr;
+    grid-column-gap: 35px;
+    padding: 40px 0;
+  }
+  &_bottom{
+    display: flex;
+    align-items: center;
+    height: 60px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  &_address{
+    max-width: 210px;
+    &_text{
+      font-size: 16px;
+      color: $text-color-white;
+      line-height: 1.5em;
+    }
+    &_link{
+      display: block;
+      font-size: 16px;
+      color: $text-color-white;
+      width: max-content;
+      margin-top: 10px;
+      opacity: 0.3;
+      transition: 0.1s;
+      &:hover{
+        opacity: 1;
+        color: $pink;
+        transition: 0.1s;
+      }
+    }
+  }
+  &_phone{
+    font-size: 16px;
+    color: $text-color-white;
+    justify-self: end;
+    transition: 0.3s;
+    &:hover{
+      color: $pink;
+      transition: 0.3s;
+    }
+  }
+  &_mail{
+    font-size: 16px;
+    color: $text-color-white;
+    transition: 0.3s;
+    &:hover{
+      color: $pink;
+      transition: 0.3s;
+    }
+  }
+  &_facebook{
+    font-size: 16px;
+    color: $text-color-white;
+    justify-self: end;
+    transition: 0.3s;
+    &:hover{
+      color: $pink;
+      transition: 0.3s;
+    }
+  }
+  &_copyright{
+    font-size: 16px;
+    color: $text-color-white;
+    opacity: 0.3;
+    margin-right: 90px;
+  }
+  &_agreement{
+    font-size: 16px;
+    color: $text-color-white;
+    opacity: 0.3;
+    transition: 0.1s;
+    &:hover{
+      opacity: 1;
+      color: $pink;
+      transition: 0.1s;
+    }
+  }
+}
