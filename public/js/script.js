@@ -18,6 +18,20 @@ $(document).ready(function() {
   });
 });
 
+/*Выпадающее меню*/
+
+$(document).ready(function() {
+  $('.header_hamburger').click(function(){
+    if ($('.sidebar').hasClass('active')){
+      $('.sidebar').removeClass('active');
+      $('body').removeClass('ov-hid');
+    } else{
+      $('.sidebar').addClass('active');
+      $('body').addClass('ov-hid');
+    }
+  });
+});
+
 /*Заголовок картинки выводится из атрибута*/
 
 $(document).ready(function(){

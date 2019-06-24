@@ -1,6 +1,8 @@
 @import "partials/params";
 @import "partials/mixins";
 
+/*Footer*/
+
 .footer{
   position: relative;
   background-color: $footer-bg;
@@ -101,6 +103,149 @@
       opacity: 1;
       color: $pink;
       transition: 0.1s;
+    }
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  /*Footer (max-width: 1199px)*/
+
+  .footer{
+    &_top{
+      grid-column-gap: 20px;
+      padding: 30px 0;
+    }
+    &_address{
+      justify-self: center;
+      max-width: 180px;
+      &_text,
+      &_link{
+        font-size: 14px;
+      }
+    }
+    &_phone,
+    &_mail,
+    &_facebook,
+    &_copyright,
+    &_agreement{
+      font-size: 14px;
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  /*Footer (max-width: 991px)*/
+
+  .footer{
+    &_logo{
+      grid-row: 1/3;
+      &_img{
+        width: 157px;
+      }
+    }
+    &_top{
+      grid-template-columns: 3fr 3fr 2fr 2fr;
+      grid-template-rows: 1fr 1fr;
+      grid-row-gap: 10px;
+    }
+    &_bottom{
+      height: 50px;
+    }
+    &_address{
+      grid-row: 1/3;
+    }
+    &_phone{
+      justify-self: center;
+      grid-row: 1/2;
+    }
+    &_mail{
+      justify-self: center;
+      grid-column: 3/4;
+      grid-row: 2/3;
+    }
+    &_facebook{
+      grid-row: 1/3;
+    }
+    &_copyright{
+      margin-right: 50px;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  /*Footer (max-width: 767px)*/
+
+  .footer{
+    &_logo{
+      grid-row: initial;
+    }
+    &_top{
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: initial;
+      grid-row-gap: 15px;
+    }
+    &_bottom{
+      height: 50px;
+    }
+    &_address{
+      max-width: initial;
+      grid-row: initial;
+    }
+    &_phone{
+      justify-self: start;
+      grid-row: initial;
+    }
+    &_mail{
+      justify-self: start;
+      grid-column: initial;
+      grid-row: initial;
+    }
+    &_facebook{
+      justify-self: start;
+      grid-row: initial;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /*Footer (max-width: 480px)*/
+
+  .footer{
+    &_logo{
+      margin-bottom: 15px;
+      &_link{
+        width: max-content;
+      }
+    }
+    &_top{
+      display: block;
+      padding: 40px 0 20px;
+    }
+    &_bottom{
+      display: block;
+      height: initial;
+      padding: 20px 0;
+    }
+    &_address{
+      margin-bottom: 10px;
+      &_text{
+        display: inline;
+        margin-right: 10px;
+      }
+      &_link{
+        display: inline;
+        margin: 10px;
+      }
+    }
+    &_phone,
+    &_mail,
+    &_facebook{
+      display: block;
+      width: max-content;
+      margin-bottom: 10px;
+    }
+    &_copyright{
+      margin-bottom: 7px;
     }
   }
 }

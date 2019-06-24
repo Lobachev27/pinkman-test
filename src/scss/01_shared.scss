@@ -86,7 +86,7 @@ a {
 }
 
 .ov-hid{
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
 .container {
@@ -122,10 +122,74 @@ a {
     }
     span {
       position: relative;
+      font-size: 14px;
       color: $text-color-main;
       opacity: 0.5;
       top: -1px;
       padding: 0 5px;
+    }
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  /*Общие стили (max-width: 1199px)*/
+
+  .container {
+    width: 960px;
+  }
+
+  /*Хлебные крошки (max-width: 1199px)*/
+
+  .page{
+    &_leader{
+      margin: 30px 0;
+    }
+    &_way{
+      &_link{
+        font-size: 13px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  /*Общие стили (max-width: 991px)*/
+
+  .container {
+    width: 740px;
+  }
+
+  /*Хлебные крошки (max-width: 991px)*/
+
+  .page{
+    &_leader{
+      margin: 20px 0;
+    }
+    &_way{
+      &_link{
+        font-size: 12px;
+      }
+      & span{
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  /*Общие стили (max-width: 767px)*/
+
+  .container {
+    width: 100%;
+    max-width: 740px;
+    padding: 0 20px;
+  }
+
+  /*Хлебные крошки (max-width: 767px)*/
+
+  .page{
+    &_leader{
+      display: none;
     }
   }
 }

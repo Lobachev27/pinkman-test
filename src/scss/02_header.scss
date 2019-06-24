@@ -7,6 +7,7 @@
   position: relative;
   background-color: $body-bg;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  z-index: 50;
   &_logo{
     &_link{
       display: block;
@@ -114,5 +115,267 @@
   }
   &_hamburger{
     display: none;
+  }
+}
+
+/*Выпадающее меню*/
+
+.sidebar{
+  display: none;
+}
+
+@media screen and (max-width: 1199px) {
+  /*Header (max-width: 1199px)*/
+
+  .header{
+    &_top{
+      &_item{
+        margin-left: 25px;
+      }
+      &_link{
+        font-size: 13px;
+      }
+    }
+    &_bottom{
+      grid-template-columns: auto 120px 150px;
+      grid-column-gap: 25px;
+      &_item{
+        margin-right: 25px;
+      }
+      &_link{
+        font-size: 14px;
+      }
+    }
+    &_phone{
+      font-size: 14px;
+    }
+    &_call{
+      font-size: 14px;
+      width: 150px;
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  /*Header (max-width: 991px)*/
+
+  .header{
+    &_logo{
+      &_img{
+        width: 157px;
+      }
+    }
+    &_top{
+      height: 50px;
+      &_item{
+        margin-left: 20px;
+      }
+    }
+    &_bottom{
+      grid-template-columns: auto 120px;
+      grid-column-gap: 20px;
+      height: 50px;
+      &_item{
+        margin-right: 20px;
+      }
+      &_link{
+        font-size: 13px;
+      }
+    }
+    &_phone{
+      font-size: 13px;
+    }
+    &_call{
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  /*Header (max-width: 767px)*/
+
+  .header{
+    & .container{
+      display: grid;
+      align-items: center;
+      grid-template-columns: 160px auto;
+      height: 50px;
+    }
+    &_top{
+      height: initial;
+      border: none;
+      &_list{
+        display: none;
+      }
+    }
+    &_bottom{
+      grid-template-columns: auto 15px;
+      grid-column-gap: 20px;
+      height: initial;
+      &_list{
+        display: none;
+      }
+    }
+    &_phone{
+      font-size: 13px;
+    }
+    &_hamburger{
+      display: block;
+      align-self: center;
+      background: url("../../img/menu-burger.svg") no-repeat;
+      background-position: center;
+      background-size: cover;
+      width: 15px;
+      height: 14px;
+      transition: 0.3s;
+      &:hover{
+        background: url("../../img/menu-burger-hover.svg") no-repeat;
+        background-position: center;
+        background-size: cover;
+        transition: 0.3s;
+        cursor: pointer;
+      }
+    }
+  }
+
+  /*Выпадающее меню (max-width: 767px)*/
+
+  .sidebar{
+    position: absolute;
+    display: grid;
+    grid-template-rows: auto 158px;
+    background-color: $body-bg;
+    width: 100%;
+    height: calc(100vh - 50px);
+    top: 0;
+    left: 0;
+    transform: translateY(-100%);
+    transition: 1s;
+    z-index: 20;
+    &.active{
+      transform: translateY(0%);
+      transition: 1s;
+    }
+    &_list{
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      list-style: none;
+      padding: 10px 0;
+    }
+    &_item{
+      position: relative;
+      &:last-child a{
+        border: none;
+      }
+    }
+    &_link{
+      font-size: 16px;
+      display: block;
+      width: 100%;
+      max-width: 740px;
+      padding: 15px 0;
+      margin: 0 20px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      transition: 0.3s;
+      &.bold{
+        font-weight: 700;
+      }
+      &:hover{
+        color: $pink;
+        transition: 0.3s;
+      }
+    }
+    &_info{
+      position: absolute;
+      width: 100%;
+      max-width: 740px;
+      padding: 30px 20px;
+      background-color: $grey;
+      bottom: 0;
+    }
+    &_address{
+      display: block;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      &_text{
+        display: inline;
+        font-size: 14px;
+        margin-right: 10px;
+      }
+      &_link{
+        font-size: 14px;
+        opacity: 0.4;
+        transition: 0.3s;
+        &:hover{
+          color: $pink;
+          opacity: 1;
+          transition: 0.3s;
+        }
+      }
+    }
+    &_contacts{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: 30px;
+      grid-row-gap: 7px;
+      align-items: center;
+      padding-top: 20px;
+      height: max-content;
+    }
+    &_mail{
+      justify-self: end;
+    }
+    &_phone,
+    &_mail,
+    &_facebook{
+      font-size: 14px;
+      width: max-content;
+      transition: 0.3s;
+      &:hover{
+        color: $pink;
+        transition: 0.3s;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /*Header (max-width: 480px)*/
+
+  .header{
+    &_phone{
+      display: block;
+      font-size: 0;
+      justify-self: end;
+      align-self: center;
+      margin-right: 10px;
+      &:before{
+        content: '\f095';
+        font-family: 'FontAwesome';
+        position: relative;
+        font-size: 18px;
+      }
+    }
+  }
+
+  /*Выпадающее меню (max-width: 480px)*/
+
+  .sidebar{
+    grid-template-rows: auto 176px;
+    &_link{
+      padding: 20px 0;
+    }
+  }
+}
+
+@media screen and (max-width: 380px) {
+  /*Выпадающее меню (max-width: 380px)*/
+
+  .sidebar{
+    &_link{
+      padding: 10px 0;
+    }
   }
 }
